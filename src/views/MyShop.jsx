@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import axios from "axios";
+import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
@@ -31,15 +31,17 @@ const MyShop = () => {
 
     const { cart, setCart } = useContext(DataContext);
 
+
     const addProduct = (Product) => {
+        price = 9.99
         // make a copy
         let copyCart = { ...cart };
         // change the copy
         copyCart.size++;
-        copyCart.total += (Math.round(Product.price * 100) / 100);
-        copyCart.Product[Product.id] ?
-            copyCart.Product[Product.id].quantity++
-            :
+        copyCart.total += (Math.round(price * 100) / 100);
+        // copyCart.Product[Product.id] ?
+        //     copyCart.Product[Product.id].quantity++
+            // :
             copyCart.Product[Product.id] = { data: Product, quantity: 1 };
         console.log(copyCart);
         // set state
@@ -55,14 +57,12 @@ const MyShop = () => {
                         return <Card key={index} id={m.id} style={{ width: '13rem' }}>
                             <Card.Img variant="top" src={m.img_url} />
                             <Card.Body>
-                                <Card.Title>{m.title}</Card.Title>
+                                <Card.Title>{m.name}</Card.Title>
                                 <Card.Text>
                                     {m.desc}
                                 </Card.Text>
                             </Card.Body>
                             <ListGroup className="list-group-flush">
-
-                                <ListGroup.Item>Rating: {m.img}</ListGroup.Item>
                                 <ListGroup.Item>Price: ${m.price}</ListGroup.Item>
                             </ListGroup>
                             <Card.Body>

@@ -7,21 +7,22 @@ function MyNav() {
   return (
     <Navbar expand="lg" className="fixed-top bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="/myhome">Ecom</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+            <Nav.Link href="/myhome">Home</Nav.Link>
+            <Nav.Link href="/myshop">Shop</Nav.Link>
+            <Nav.Link href="/mycart">Cart</Nav.Link>
+            <NavDropdown title="More..." id="basic-nav-dropdown">
+              <NavDropdown.Item href="/Buy-again">Buy again</NavDropdown.Item>
+              <NavDropdown.Item href="/Favs">
+                Favorites
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="/see-others">See what others bought</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item href="/Log-Out">
+                Log Out
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

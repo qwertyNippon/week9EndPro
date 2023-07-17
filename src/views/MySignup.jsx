@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom'
 import './MySignup.css'
 
 const MySignup = () => {
+
+  const moveToLogin = () => {
+    console.log('qwerty')
+  }
     return (
       <body>
         <div>
@@ -49,7 +53,7 @@ const MySignup = () => {
               <div className=" ">
 
                 <div className="create pads"></div>
-                  <Button variant="light" className='create but'>Return to Login</Button>
+                  <Button variant="light" className='create but' onClick={() => moveToLogin()}>Return to Login</Button>
               </div>
             </div>
           </div>
