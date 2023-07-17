@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import './MyCart.css'
 
@@ -25,14 +25,14 @@ const MyCart = () => {
     console.log(copyCart);
     copyCart.size ++;
 
-    copyCart.total += (Math.round(copyCart.Products[id].data.price * 100) / 100);
+    copyCart.total += (Math.round(copyCart.Products[id].data.Price * 100) / 100);
     copyCart.Products[id].quantity ++;
     setCart(copyCart);
    }
    const decreaseItem = id => {
     let copyCart = {...cart};
     copyCart.size --;
-    copyCart.total -= (Math.round(copyCart.Products[id].data.price * 100) / 100);
+    copyCart.total -= (Math.round(copyCart.Products[id].data.Price * 100) / 100);
     copyCart.Products[id].quantity > 1 ?
     copyCart.Products[id].quantity -- :
     delete copyCart.Products[id];
@@ -41,7 +41,7 @@ const MyCart = () => {
    const removeItem = id => {
     let copyCart = {...cart};
     copyCart.size -= copyCart.Products[id].quantity;
-    copyCart.total -= copyCart.Products[id].quantity * (Math.round(copyCart.Products[id].data.price * 100) / 100);
+    copyCart.total -= copyCart.Products[id].quantity * (Math.round(copyCart.Products[id].data.Price * 100) / 100);
     delete copyCart.Products[id];
     setCart(copyCart);
    }
@@ -53,7 +53,7 @@ const MyCart = () => {
                     <div className=''>
                     <div className='indcardmain'>
                         <Card style={{ width: '21rem' }}>
-                        <Card.Img variant="top" src="holder.js/100px180" />
+                        <Card.Img variant="top" src={Product.data.img} />
                         <Card.Body>
                             <Card.Title>product</Card.Title>
                             <Card.Text>
@@ -62,15 +62,16 @@ const MyCart = () => {
                                 <p>words desc</p>
                             </Card.Text>
                                 <div className='create indbutdivq'>
-                                    <span><Button className="m-3" variant="secondary" > - 1 </Button></span>
-                                    <span className="quan">Quantity</span>
-                                    <span><Button className="m-3" variant="info" > + 1 </Button></span>
+                                    <span><Button className="m-3" variant="secondary" onClick={()=> decreaseItem(Product.data.id)}> - 1 </Button></span>
+                                    <span className="quan">{Product.quantity}</span>
+                                    <span><Button className="m-3" variant="info" onClick={() => increaseItem(Product.data.id)}> + 1 </Button></span>
                                 </div>
                             <div>
                                 <div className='create indbutdiv'>
-                                    <Button className='indbut' variant="primary">Add to Cart</Button>
-                                    <Button className='indbut' variant="danger">Delete</Button>
+                                    <Button className='indbut' variant="primary" onClick={() => increaseItem(Product.data.id)}>Add to Cart</Button>
+                                    <Button className='indbut' variant="danger" onClick={()=> removeItem(Product.data.id)}>Delete</Button>
                                 </div>
+                                    <Button className='indbut' variant="danger" onClick={()=> clearCart()}>Delete All</Button>
                             </div>
                         </Card.Body>
                         </Card>

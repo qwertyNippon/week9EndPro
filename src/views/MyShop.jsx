@@ -23,27 +23,21 @@ const MyShop = () => {
     }
     const loadProductData = async () => {
         let data = await getProductData();
-        // console.log(data)
+        console.log(data)
         setProduct(data.Product);
     }
     const [Product, setProduct] = useState(() => loadProductData());
-    // console.log(Product);
+    console.log(Product);
 
     const { cart, setCart } = useContext(DataContext);
 
-    const itemPrice = (Price) => {
-        Price = 9.99
-        return Price
-    }
-
 
     const addProduct = (Product) => {
-        price = 9.99
         // make a copy
         let copyCart = { ...cart };
         // change the copy
         copyCart.size++;
-        copyCart.total += (Math.round(price * 100) / 100);
+        copyCart.total += (Math.round(Product.price * 100) / 100);
         copyCart.Product[Product.name] ?
             copyCart.Product[Product.name].quantity++
             :
@@ -68,7 +62,7 @@ const MyShop = () => {
                                 </Card.Text>
                             </Card.Body>
                             <ListGroup className="list-group-flush">
-                                <ListGroup.Item>Price: ${ () => itemPrice()}</ListGroup.Item>
+                                <ListGroup.Item>Price: ${Product.price}</ListGroup.Item>
                             </ListGroup>
                             <Card.Body>
                             </Card.Body>
