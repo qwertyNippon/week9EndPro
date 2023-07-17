@@ -1,0 +1,27 @@
+.color {
+    background-color: brown;
+}
+
+.create {
+    display: block;
+    margin: auto;
+    max-width: 48rem;
+    text-align: center;
+}
+
+.flex-r {
+    display: flex;
+    flex-direction: row;
+}
+
+.pads {
+    padding: 1rem;
+}
+
+.but {
+    border-radius: 25px;
+}
+
+.Tpad {
+    padding-top: 5rem;
+}

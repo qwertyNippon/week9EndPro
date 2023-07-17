@@ -1,0 +1,24 @@
+.homebut {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 2rem;
+    min-width: 8rem;
+}
+
+.color {
+    background-color: brown;
+}
+
+.homebutdiv{
+    margin-left: 1rem;
+}
+
+.indbutdivq{
+    margin-left: .5rem;
+}
+
+.indcardmain {
+    display: block;
+    padding-top: 5rem;
+}

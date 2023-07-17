@@ -1,0 +1,22 @@
+.indbut {
+    display: inline-flex;
+    justify-content: space-between;
+    margin-right: 2rem;
+}
+
+.color {
+    background-color: brown;
+}
+
+.indbutdiv{
+    margin-left: 1rem;
+}
+
+.indbutdivq{
+    margin-left: .5rem;
+}
+
+.indcardmain {
+    display: block;
+    padding-top: 5rem;
+}
