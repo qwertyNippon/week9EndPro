@@ -25,7 +25,7 @@ const MyHome = () => {
                             <div className='create homebutdiv'>
                                 <Button className='homebut' variant="primary">Login</Button>
                                 <Button className='homebut' variant="warning" onClick={() => addProduct(m)}>Sign Up</Button>
-                                <Link to='/next-page' state={{ data : heres_where_u_add_the_data_variable }}> Click Me </Link>
+                                {/* <Link to='/next-page' state={{ data : heres_where_u_add_the_data_variable }}> Click Me </Link> */}
                             </div>
                         </Card.Body>
                         </Card>

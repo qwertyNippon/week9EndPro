@@ -37,7 +37,7 @@ function App() {
   return (
     <>
       <MyNav />
-      {page}
+      {/* {page} */}
       <Routes>
         <Route children path='/mylogin' element={<MyLogin  />} />
         <Route children path='/mysignup' element={<MySignup  />} />

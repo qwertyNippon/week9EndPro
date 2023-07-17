@@ -42,7 +42,7 @@ const MySignup = () => {
                 />
               </div>
               <div className='pads'>
-                <Button variant='warning'className="continue container text-center but">Sign Up</Button>
+                <Button variant='warning'className="continue container text-center but" href="/MyLogin">Sign Up</Button>
               </div>
               <div className='create'>
                 <Link href="#"><li className='pads'>Need Help?</li></Link>
@@ -53,7 +53,7 @@ const MySignup = () => {
               <div className=" ">
 
                 <div className="create pads"></div>
-                  <Button variant="light" className='create but' onClick={() => moveToLogin()}>Return to Login</Button>
+                  <Button variant="light" className='create but' href="/MyLogin">Return to Login</Button>
               </div>
             </div>
           </div>

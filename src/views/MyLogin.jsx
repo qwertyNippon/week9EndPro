@@ -38,7 +38,7 @@ const MyLogin = () => {
                 />
               </div>
               <div className='pads'>
-                <Button variant='warning'className="continue container text-center but">Continue</Button>
+                <Button variant='warning'className="continue container text-center but" href="/MyShop">Continue</Button>
               </div>
               <div className='create'>
                 <Link href="#"><li className='pads'>Need Help?</li></Link>
@@ -49,7 +49,7 @@ const MyLogin = () => {
               <div className=" ">
 
                 <div className="create pads">New To Our Family?</div>
-                  <Button variant="light" className='create but'>Create Your Amazon Account</Button>
+                  <Button href="/MySignup" variant="light" className='create but'>Create Your Amazon Account</Button>
               </div>
             </div>
           </div>
