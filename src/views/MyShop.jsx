@@ -31,6 +31,11 @@ const MyShop = () => {
 
     const { cart, setCart } = useContext(DataContext);
 
+    const itemPrice = (Price) => {
+        Price = 9.99
+        return Price
+    }
+
 
     const addProduct = (Product) => {
         price = 9.99
@@ -39,36 +44,36 @@ const MyShop = () => {
         // change the copy
         copyCart.size++;
         copyCart.total += (Math.round(price * 100) / 100);
-        // copyCart.Product[Product.id] ?
-        //     copyCart.Product[Product.id].quantity++
-            // :
-            copyCart.Product[Product.id] = { data: Product, quantity: 1 };
+        copyCart.Product[Product.name] ?
+            copyCart.Product[Product.name].quantity++
+            :
+            copyCart.Product[Product.name] = { data: Product, quantity: 1 };
         console.log(copyCart);
         // set state
         setCart(copyCart);
     }
     return (
         <div>
-            <h1>The best store this side of the Rockies</h1>
+            <h1>Shop Page</h1>
             <div className="container">
                 <div className="row">
                     {console.log(Product, typeof Product)}
-                    {Product && Product.length > 0 ? Product.map((m, index) => {
-                        return <Card key={index} id={m.id} style={{ width: '13rem' }}>
-                            <Card.Img variant="top" src={m.img_url} />
+                    {Product && Product.length > 0 ? Product.map((p, index) => {
+                        return <Card key={index} style={{ width: '13rem' }}>
+                            <Card.Img variant="top" src={Product.img} />
                             <Card.Body>
-                                <Card.Title>{m.name}</Card.Title>
+                                <Card.Title>{Product.name}</Card.Title>
                                 <Card.Text>
-                                    {m.desc}
+                                    '{Product.name} is made for quality'
                                 </Card.Text>
                             </Card.Body>
                             <ListGroup className="list-group-flush">
-                                <ListGroup.Item>Price: ${m.price}</ListGroup.Item>
+                                <ListGroup.Item>Price: ${ () => itemPrice()}</ListGroup.Item>
                             </ListGroup>
                             <Card.Body>
                             </Card.Body>
                             <Card.Body>
-                                <Button variant="success" onClick={() => addProduct(m)}>Add to cart</Button>
+                                <Button variant="success" onClick={() => addProduct(p)}>Add to cart</Button>
                             </Card.Body>
 
                         </Card>
@@ -76,11 +81,11 @@ const MyShop = () => {
                         <Card>
                             <Card.Header>Sorry!</Card.Header>
                             <Card.Body>
-                                <blockquote className="blockquote mb-0">
+                                <div>
                                     <p>
                                         Sorry malfunction.
                                     </p>
-                                </blockquote>
+                                </div>
                             </Card.Body>
                         </Card>
                     }
