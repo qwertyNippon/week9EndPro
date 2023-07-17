@@ -20,31 +20,31 @@ const MyCart = () => {
    const clearCart = () => {
     setCart({size:0, total:0, product:{}});
    }
-//    const increaseItem = id => {
-//     let copyCart = {...cart};
-//     console.log(copyCart);
-//     copyCart.size ++;
+   const increaseItem = id => {
+    let copyCart = {...cart};
+    console.log(copyCart);
+    copyCart.size ++;
 
-//     copyCart.total += (Math.round(copyCart.Products[id].data.price * 100) / 100);
-//     copyCart.Products[id].quantity ++;
-//     setCart(copyCart);
-//    }
-//    const decreaseItem = id => {
-//     let copyCart = {...cart};
-//     copyCart.size --;
-//     copyCart.total -= (Math.round(copyCart.Products[id].data.price * 100) / 100);
-//     copyCart.Products[id].quantity > 1 ?
-//     copyCart.Products[id].quantity -- :
-//     delete copyCart.Products[id];
-//     setCart(copyCart);
-//    }
-//    const removeItem = id => {
-//     let copyCart = {...cart};
-//     copyCart.size -= copyCart.Products[id].quantity;
-//     copyCart.total -= copyCart.Products[id].quantity * (Math.round(copyCart.Products[id].data.price * 100) / 100);
-//     delete copyCart.Products[id];
-//     setCart(copyCart);
-//    }
+    copyCart.total += (Math.round(copyCart.Products[id].data.price * 100) / 100);
+    copyCart.Products[id].quantity ++;
+    setCart(copyCart);
+   }
+   const decreaseItem = id => {
+    let copyCart = {...cart};
+    copyCart.size --;
+    copyCart.total -= (Math.round(copyCart.Products[id].data.price * 100) / 100);
+    copyCart.Products[id].quantity > 1 ?
+    copyCart.Products[id].quantity -- :
+    delete copyCart.Products[id];
+    setCart(copyCart);
+   }
+   const removeItem = id => {
+    let copyCart = {...cart};
+    copyCart.size -= copyCart.Products[id].quantity;
+    copyCart.total -= copyCart.Products[id].quantity * (Math.round(copyCart.Products[id].data.price * 100) / 100);
+    delete copyCart.Products[id];
+    setCart(copyCart);
+   }
     return (
         <Container>
             <Row>
